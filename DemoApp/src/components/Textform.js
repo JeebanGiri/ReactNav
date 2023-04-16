@@ -18,9 +18,9 @@ export default function Textform(props) {
 
 
   // This function currently not working 
-  const handlecolortext = () => {
-    setcolor("#ff0000");
-  }
+  // const handlecolortext = () => {
+  //   setcolor("#ff0000");
+  // }
 
   const handledownloadtext = () => {
     const element = document.createElement("a");
@@ -45,21 +45,22 @@ const handleonchecked=()=>{
 
 
   const [text, settext] = useState("");
-  const [color, setcolor] = useState("#000000");
+  // const [color, setcolor] = useState("#000000");
   const [checked, setchecked] =useState(false);
   const [check, setcheck] =useReducer(
-    (check) => !check,
-    false);
-  const result = color + text;
+    (check) => !check, false);
+
+  // const result = color + text;
   return (
     <>
+      <p>Hello Guys</p>
       <div className="container">
         <h2>{props.heading}</h2>
         <div className="form-outline">
           <textarea
             className="form-control"
             id="textAreaExample1"
-            value={result} 
+            value={text}  
             placeholder="Enter text here to chage"
             onChange={handleonchange}
             rows="10"
@@ -68,7 +69,7 @@ const handleonchecked=()=>{
         <button className="btn btn-primary mt-2 " onClick={handleupclick}>
           Change Uppercase
         </button>
-        <button
+        <button 
           className="btn btn-primary mt-2 mx-5 "
           onClick={handledownclick}
         >
@@ -88,14 +89,14 @@ const handleonchecked=()=>{
           Clear Text
         </button> */}
 
-        <button
+        {/* <button
           className = "btn btn-primary mt-2 mx-5 "
           onClick = {handlecolortext}
           onChange={(event) => 
           event.target.value}
         >
           Colour Text
-        </button>
+        </button> */}
 
         <button
           className="btn btn-primary mt-2 mx-5 "
